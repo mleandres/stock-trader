@@ -45,6 +45,7 @@ export default {
         stockPrice: this.stock.price
       }
       this.$store.dispatch('portfolio/buyStock', order)
+      this.quantity = null
     }
   },
   computed: {

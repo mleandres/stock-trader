@@ -44,6 +44,9 @@ export default {
       }
       this.$store.dispatch('login', userData)
     }
+  },
+  mounted () {
+    document.title = "Log in"
   }
 }
 </script>

@@ -29,7 +29,7 @@
         <button type="submit" class="btn btn-default">Submit</button>
       </form>
       -->
-      <strong v-if="auth" class="nav navbar-text navbar-right">Your Balance: {{ balance | currency }}</strong>
+      <strong v-if="auth" class="nav navbar-text navbar-right">Your Cash Balance: {{ balance | currency }}</strong>
       <ul class="nav navbar-nav navbar-right">
         <li v-if="auth">
           <a href="#" @click="endDay">End Day</a>

@@ -2,12 +2,16 @@
   <div id="home">
     <div class="info">
       <h1>Welcome {{ welcomeMessage }}</h1>
-      <h4>This fun project allows you to simulate the thrill of trading stocks or viewing your portfolio but without the hassle of actually making or losing any money</h4>
-      <br>
-      <h5>Click 'End Day' to simulate the next stock market day</h5>
-      <h5>Your Data will be automatically saved when you buy or sell a stock or end the day</h5>
+      <h4>This fun project allows you to simulate the thrill of trading stocks or viewing your portfolio but without the hassle of actually making or losing any money.</h4>
+      <ol>
+        <li>First sign up or log in.</li>
+        <li>After logging in, buy stocks from the stock tab</li>
+        <li>Click 'End Day' to simulate the next stock market day.</li>
+        <li>Sell your stocks in the portfolio tab.</li>
+        <li>Your Data will be automatically saved when you buy or sell a stock or end the day</li>
+      </ol>
       <hr>
-      <p v-if="auth">Your Balance: {{ balance | currency }}</p>
+      <p v-if="auth">Your Cash Balance: {{ balance | currency }}</p>
       <router-link tag="a"
                   v-if="!auth"
                   href="#"
@@ -44,6 +48,9 @@ export default {
         return (name ? name: 'you') + '!'
       }
     }
+  },
+  mounted () {
+    document.title = "Welcome!"
   }
 }
 </script>

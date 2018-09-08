@@ -8,7 +8,9 @@
 
 <script>
 export default {
-
+  mounted () {
+    document.title = "Settings"
+  }
 }
 </script>
 

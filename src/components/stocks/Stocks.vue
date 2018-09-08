@@ -21,6 +21,9 @@ export default {
     stocks () {
       return this.$store.getters['stocks/getStocks']
     }
+  },
+  mounted () {
+    document.title = "Stock List"
   }
 }
 </script> 

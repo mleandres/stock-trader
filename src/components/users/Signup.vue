@@ -143,6 +143,9 @@ export default {
       required,
       sameAs: sameAs(vm => vm.password)
     }
+  },
+  mounted () {
+    document.title = "Sign up"
   }
 }
 </script>

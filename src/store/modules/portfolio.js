@@ -31,6 +31,14 @@ export default {
         const stock = state.stocks.find(stock => stock.id === id)
         return stock ? stock : { id: null, quantity: 0 }
       }
+    },
+    totalValue (state, getters) {
+      const port = getters.stockPortfolio
+      var total = 0
+      for (let i = 0; i < port.length; i++) {
+        total += port[i].price * port[i].quantity
+      }
+      return total
     }
   },
   mutations: {

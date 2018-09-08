@@ -19,7 +19,7 @@
         <div class="pull-right">
           <button class="btn btn-warning"
                   @click="sellStock"
-                  :disabled="disableSell">{{ sellText }}</button>
+                  :disabled="disableSell">{{ sellText }}: {{ quantity * stock.price | currency}}</button>
         </div>
       </div>
     </div>

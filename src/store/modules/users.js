@@ -23,6 +23,9 @@ export default {
   getters: {
     token (state) {
       return state.token
+    },
+    name (state) {
+      return state.username
     }
   },
   mutations: {
