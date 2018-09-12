@@ -4,6 +4,8 @@ import databaseAxios from '../../axios/database'
 
 import router from '../../routes'
 
+import demo from '../../data/demo'
+
 // firebase authentication API
 const newUser = 'signupNewUser?key='
 const verifyUser = 'verifyPassword?key='
@@ -18,7 +20,8 @@ export default {
     token: null,
     userId: null,
     refreshToken: null,
-    username: null
+    username: null,
+    demo: false
   },
   getters: {
     token (state) {
@@ -46,6 +49,9 @@ export default {
     setUsername (state, username) {
       state.username = username
       // console.log(state.username)
+    },
+    RESET_DEMO (state) {
+      state.demo = false
     }
   },
   actions: {
@@ -185,7 +191,7 @@ export default {
       const username = localStorage.getItem('username')
       const now = new Date()
 
-      if (!token) {
+      if (!token || demo) {
         return
       }
       if (now >= expirationDate) {
@@ -220,6 +226,10 @@ export default {
           commit('setUsername', res.data.name)
         })
         .catch(err => dispatch('handleError', err.response))
+    },
+    initDemo ({ commit, state, dispatch }) {
+      state.demo = true;
+      dispatch('login', { email: demo.email, password: demo.password })
     }
     /*
     setRefreshTimer ({ state, dispatch }, expirationTime) {

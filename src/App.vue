@@ -29,6 +29,7 @@ export default {
     appStocks: Stocks
   },
   created () {
+    this.$store.commit('RESET_DEMO')
     this.$store.dispatch('stocks/initStocks')
     this.$store.dispatch('resumeSession')
   },
@@ -45,6 +46,7 @@ export default {
 <style>
 body, html {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    background-color: #FFF
 }
 
 body {
@@ -178,6 +180,61 @@ input[type=number]::-webkit-outer-spin-button {
         "footer footer footer";
     }
   }
+}
+
+.button-large {
+  text-align: center;
+  text-decoration: none;
+  padding: 1em 1em;
+  border-radius: 0.3em;
+  font-size: 110%;
+  margin: 0.2em;
+  letter-spacing: 0.3px;
+}
+
+.button-small {
+  text-align: center;
+  text-decoration: none;
+  padding: 0.5em 0.7em;
+  border-radius: 0.3em;
+  font-size: 100%;
+  margin: 0.2em;
+  letter-spacing: 0.5px;
+}
+
+.main-button {
+  background-color: #3A606E;
+  border: solid 1px #2B4651;
+  color: #FFF;
+  font-weight: 300;
+}
+
+.main-button:hover {
+  text-decoration: none;
+  background-color: #2B4651;
+}
+
+.main-button:focus {
+  text-decoration: none;
+  color: #FFF;
+}
+
+.secondary-button {
+  background-color: #E0E0E0;
+  border: solid 1px #a3a3a3;
+  color: #000;
+  font-weight: normal;
+}
+
+.secondary-button:hover {
+  text-decoration: none;
+  background-color: #a3a3a3;
+  color: #000;
+}
+
+.secondary-button:focus {
+  text-decoration: none;
+  color: #000;
 }
 
 </style>

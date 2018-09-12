@@ -29,10 +29,14 @@ export default {
     },
     totalValue () {
       return this.$store.getters['portfolio/totalValue']
+    },
+    name () {
+      const name = this.$store.state.users.username
+      return (name ? name + "'s" : "Your")
     }
   },
   mounted () {
-    document.title = this.$store.getters.name + "'s Portfolio"
+    document.title = this.name + " Portfolio"
   }
 }
 </script> 

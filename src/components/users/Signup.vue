@@ -49,7 +49,7 @@
           <p class="info-text">{{ confirmPasswordInfoText }}</p>
         </div>
         <div class="submit">
-          <button class="btn btn-default" 
+          <button class="button-small main-button" 
                   type="submit"
                   :disabled="$v.$invalid">Submit</button>
         </div>
@@ -176,11 +176,6 @@ export default {
   padding: 0.2em 0.5em;
   box-sizing: border-box;
   border: 1px solid #bbb
-}
-
-.input input:focus {
-  outline: none;
-  border: 1px solid lightgreen;
 }
 
 .input, h2, .submit {

@@ -93,6 +93,7 @@ export default {
     },
     // update db on buy or sell order
     updateDB ({ state, rootState, getters, dispatch }, order) {
+      if (rootState.users.demo) return
       const quantity = getters.stockPortfolioById(order.stockId).quantity
       const stockLocation = 'portfolios/' + rootState.users.userId + '/' + order.stockId + '.json' + authDB + rootState.users.token
 
@@ -111,6 +112,7 @@ export default {
     },
     // pull portfolio stock info and balance from db to vuex store
     pullPortfolio ({ commit, rootState }) {
+      if (rootState.users.demo) return
       const portfolioLocation = 'portfolios/' + rootState.users.userId + '.json'
       // pull portfolio
       databaseAxios.get(portfolioLocation +  authDB + rootState.users.token)
